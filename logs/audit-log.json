@@ -1,65 +1,142 @@
 [
   {
-    "id": "990bf0fe-e447-4162-9a09-9b0dd3d33e24",
-    "timestamp": "2026-07-06T16:53:44.036Z",
-    "requestId": "REQ-1783356813109",
-    "filePath": "/system/config.txt",
-    "decision": "BLOCKED",
-    "riskScore": 100,
+    "id": "AUD-1001",
+    "timestamp": "2026-07-07T08:10:21Z",
+    "requestId": "REQ-178335000001",
+    "filePath": "reports/quarterly-summary.txt",
+    "decision": "APPROVED",
+    "riskScore": 8,
+    "violations": [],
+    "reason": "No policy violations detected. File write approved.",
+    "toolResult": {
+      "success": true,
+      "message": "File written successfully."
+    }
+  },
+  {
+    "id": "AUD-1002",
+    "timestamp": "2026-07-07T08:13:42Z",
+    "requestId": "REQ-178335000002",
+    "filePath": "output/customer-data.csv",
+    "decision": "WARNING",
+    "riskScore": 42,
     "violations": [
-      "Restricted Directory"
+      "PII Detected"
     ],
-    "reason": "Policy violation detected.",
+    "reason": "Personally identifiable information detected. Manual review recommended.",
     "toolResult": null
   },
   {
-    "id": "1ddaefe6-947e-4f89-af72-b5e932d9ef8a",
-    "timestamp": "2026-07-06T16:47:36.724Z",
-    "requestId": "REQ-1783356448265",
+    "id": "AUD-1003",
+    "timestamp": "2026-07-07T08:18:16Z",
+    "requestId": "REQ-178335000003",
     "filePath": "output/secrets.txt",
     "decision": "BLOCKED",
-    "riskScore": 95,
+    "riskScore": 96,
     "violations": [
       "Google API Key",
-      "API Keys",
       "Secrets",
-      "Tokens",
-      "Credentials",
       "Unsafe File Destination"
     ],
-    "reason": "An explicit Google API Key, which is a sensitive credential and secret, was identified for storage in a plain text file at an unsafe destination.",
+    "reason": "Simulated API key detected in plaintext. Request blocked.",
     "toolResult": null
   },
   {
-    "id": "53032be8-69c5-4cfd-9eb0-a9531f034e63",
-    "timestamp": "2026-07-06T16:46:27.516Z",
-    "requestId": "REQ-1783356380350",
-    "filePath": "output/employees.txt",
+    "id": "AUD-1004",
+    "timestamp": "2026-07-07T08:21:11Z",
+    "requestId": "REQ-178335000004",
+    "filePath": "documents/policy-update.md",
+    "decision": "APPROVED",
+    "riskScore": 11,
+    "violations": [],
+    "reason": "Policy engine and Gemini auditor approved the request.",
+    "toolResult": {
+      "success": true,
+      "message": "File written successfully."
+    }
+  },
+  {
+    "id": "AUD-1005",
+    "timestamp": "2026-07-07T08:26:05Z",
+    "requestId": "REQ-178335000005",
+    "filePath": "backup/database.sql",
+    "decision": "WARNING",
+    "riskScore": 58,
+    "violations": [
+      "Database Dump"
+    ],
+    "reason": "Database export detected. Human approval recommended.",
+    "toolResult": null
+  },
+  {
+    "id": "AUD-1006",
+    "timestamp": "2026-07-07T08:29:33Z",
+    "requestId": "REQ-178335000006",
+    "filePath": "tmp/aws-credentials.txt",
     "decision": "BLOCKED",
     "riskScore": 98,
     "violations": [
-      "Email Address",
-      "Phone Number",
-      "Plaintext password detected.",
-      "Personally Identifiable Information (PII) detected.",
-      "Unsafe file destination for sensitive data (plaintext .txt file)."
+      "AWS Access Key",
+      "Credentials",
+      "Unsafe File Destination"
     ],
-    "reason": "The content includes a plaintext password and Personally Identifiable Information (PII), which are to be written to an unsecured plaintext file, posing a critical security risk.",
+    "reason": "Sensitive cloud credentials detected. Operation blocked.",
     "toolResult": null
   },
   {
-    "id": "1a84bfce-da8d-423a-8e76-a9f01a5263a3",
-    "timestamp": "2026-07-06T16:44:25.186Z",
-    "requestId": "REQ-1783356260042",
-    "filePath": "output/report.txt",
+    "id": "AUD-1007",
+    "timestamp": "2026-07-07T08:33:27Z",
+    "requestId": "REQ-178335000007",
+    "filePath": "reports/risk-analysis.pdf",
     "decision": "APPROVED",
-    "riskScore": 0,
+    "riskScore": 15,
     "violations": [],
-    "reason": "Request passed all compliance checks.",
+    "reason": "Request complies with all enterprise policies.",
     "toolResult": {
       "success": true,
-      "path": "C:\\Users\\essilor\\Desktop\\Sreya - Clg\\guardrail-ai\\output\\report.txt",
       "message": "File written successfully."
     }
+  },
+  {
+    "id": "AUD-1008",
+    "timestamp": "2026-07-07T08:37:44Z",
+    "requestId": "REQ-178335000008",
+    "filePath": "config/github-token.txt",
+    "decision": "BLOCKED",
+    "riskScore": 93,
+    "violations": [
+      "GitHub Token",
+      "Secrets"
+    ],
+    "reason": "Potential GitHub access token detected. Request denied.",
+    "toolResult": null
+  },
+  {
+    "id": "AUD-1009",
+    "timestamp": "2026-07-07T08:41:02Z",
+    "requestId": "REQ-178335000009",
+    "filePath": "notes/meeting.md",
+    "decision": "APPROVED",
+    "riskScore": 5,
+    "violations": [],
+    "reason": "No sensitive content detected.",
+    "toolResult": {
+      "success": true,
+      "message": "File written successfully."
+    }
+  },
+  {
+    "id": "AUD-1010",
+    "timestamp": "2026-07-07T08:46:30Z",
+    "requestId": "REQ-178335000010",
+    "filePath": "exports/employee-records.csv",
+    "decision": "WARNING",
+    "riskScore": 61,
+    "violations": [
+      "PII Detected",
+      "Bulk Export"
+    ],
+    "reason": "Large export containing sensitive employee information detected. Manual approval recommended.",
+    "toolResult": null
   }
 ]
