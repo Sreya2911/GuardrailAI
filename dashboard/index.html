@@ -1,283 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>GuardrailAI - Autonomous Regulatory Guardrail</title>
-
     <link rel="stylesheet" href="style.css">
-
     <script src="./vendor/chart.umd.js"></script>
-
 </head>
-
 <body>
-
 <div class="container">
-
     <!-- ================= Sidebar ================= -->
-
     <aside class="sidebar">
-
         <div class="logo">
-
             <h1>GuardrailAI</h1>
             <span>Autonomous Regulatory Guardrail</span>
-
         </div>
-
         <nav>
-
             <div class="menu-item active">Dashboard</div>
             <div class="menu-item">Audit Logs</div>
             <div class="menu-item">Violations</div>
             <div class="menu-item">Policy Engine</div>
             <div class="menu-item">Gemini Auditor</div>
             <div class="menu-item">Reports</div>
-
         </nav>
-
     </aside>
-
     <!-- ================= Main ================= -->
-
     <main class="main-content">
-
         <!-- ================= HEADER ================= -->
-
         <section id="dashboard">
-
             <div class="top-bar">
-
                 <div>
-
                     <h1>AI Governance Dashboard</h1>
-
                     <p>Live Compliance Monitoring</p>
-
                 </div>
-
                 <div class="system-status">
-
                     System : Healthy
-
                 </div>
-
+                <span id="refreshStatus" class="refresh-status">
+                    ● Monitoring...
+                </span>
             </div>
-
             <!-- ================= Cards ================= -->
-
             <div class="cards">
-
                 <div class="card">
-
                     <h3>Total Requests</h3>
-
                     <h2 id="totalRequests">0</h2>
-
                 </div>
-
                 <div class="card">
-
                     <h3>Approved</h3>
-
                     <h2 id="approvedRequests">0</h2>
-
                 </div>
-
                 <div class="card">
-
                     <h3>Blocked</h3>
-
                     <h2 id="blockedRequests">0</h2>
-
                 </div>
-
                 <div class="card">
-
                     <h3>Average Risk</h3>
-
                     <h2 id="averageRisk">0%</h2>
-
                 </div>
-
             </div>
-
         </section>
-
         <!-- ================= CHARTS ================= -->
-
         <section class="chart-grid">
-
             <div class="panel">
-
                 <h2>Risk Distribution</h2>
-
                 <canvas id="riskChart"></canvas>
-
             </div>
-
             <div class="panel">
-
                 <h2>Risk Trend</h2>
-
                 <canvas id="trendChart"></canvas>
-
             </div>
-
         </section>
-
         <!-- ================= TIMELINE ================= -->
-
         <section id="auditlogs">
-
             <div class="panel">
-
                 <h2>Live Audit Timeline</h2>
-
                 <div id="timeline"></div>
-
             </div>
-
         </section>
-
         <!-- ================= POLICY ================= -->
-
         <section id="policy">
-
             <div class="panel">
-
                 <h2>Policy Engine Status</h2>
-
                 <div class="policy-list">
-
                     <div class="policy-row">
-
                         <span>Email Detection</span>
-
                         <span class="active-text">ACTIVE</span>
-
                     </div>
-
                     <div class="policy-row">
-
                         <span>Password Detection</span>
-
                         <span class="active-text">ACTIVE</span>
-
                     </div>
-
                     <div class="policy-row">
-
                         <span>API Key Detection</span>
-
                         <span class="active-text">ACTIVE</span>
-
                     </div>
-
                     <div class="policy-row">
-
                         <span>Restricted Directory Protection</span>
-
                         <span class="active-text">ACTIVE</span>
-
                     </div>
-
                     <div class="policy-row">
-
                         <span>PII Detection</span>
-
                         <span class="active-text">ACTIVE</span>
-
                     </div>
-
                 </div>
-
             </div>
-
         </section>
-
         <!-- ================= TABLE ================= -->
-
         <section id="violations">
-
             <div class="panel">
-
                 <h2>Recent Compliance Events</h2>
-
                 <div class="table-container">
-
                     <table>
-
                         <thead>
-
                         <tr>
-
                             <th>Decision</th>
                             <th>File</th>
                             <th>Risk</th>
                             <th>Reason</th>
-
                         </tr>
-
                         </thead>
-
                         <tbody id="eventTable">
-
                         </tbody>
-
                     </table>
-
                 </div>
-
             </div>
-
         </section>
-
         <!-- ================= GEMINI ================= -->
-
         <section id="auditor">
-
             <div class="panel">
-
                 <h2>Gemini Compliance Auditor</h2>
-
                 <div id="aiReasoning">
-
                     Waiting for audits...
-
                 </div>
-
             </div>
-
         </section>
-
         <!-- ================= REPORT ================= -->
-
         <section id="reports">
-
             <div class="panel">
-
                 <h2>Compliance Report Export</h2>
-
                 <button onclick="downloadLog()">
-
                     Download Audit Log
-
                 </button>
-
             </div>
-
         </section>
-
     </main>
-
 </div>
-
 <script src="app.js"></script>
-
 </body>
 </html>
