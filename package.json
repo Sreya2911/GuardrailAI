@@ -5,8 +5,8 @@
   "type": "module",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "node server.js"
+    "start": "node dashboardServer.js",
+    "dev": "node dashboardServer.js"
   },
   "keywords": [
     "mcp",
