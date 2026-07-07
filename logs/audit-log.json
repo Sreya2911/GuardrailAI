@@ -1,0 +1,65 @@
+[
+  {
+    "id": "990bf0fe-e447-4162-9a09-9b0dd3d33e24",
+    "timestamp": "2026-07-06T16:53:44.036Z",
+    "requestId": "REQ-1783356813109",
+    "filePath": "/system/config.txt",
+    "decision": "BLOCKED",
+    "riskScore": 100,
+    "violations": [
+      "Restricted Directory"
+    ],
+    "reason": "Policy violation detected.",
+    "toolResult": null
+  },
+  {
+    "id": "1ddaefe6-947e-4f89-af72-b5e932d9ef8a",
+    "timestamp": "2026-07-06T16:47:36.724Z",
+    "requestId": "REQ-1783356448265",
+    "filePath": "output/secrets.txt",
+    "decision": "BLOCKED",
+    "riskScore": 95,
+    "violations": [
+      "Google API Key",
+      "API Keys",
+      "Secrets",
+      "Tokens",
+      "Credentials",
+      "Unsafe File Destination"
+    ],
+    "reason": "An explicit Google API Key, which is a sensitive credential and secret, was identified for storage in a plain text file at an unsafe destination.",
+    "toolResult": null
+  },
+  {
+    "id": "53032be8-69c5-4cfd-9eb0-a9531f034e63",
+    "timestamp": "2026-07-06T16:46:27.516Z",
+    "requestId": "REQ-1783356380350",
+    "filePath": "output/employees.txt",
+    "decision": "BLOCKED",
+    "riskScore": 98,
+    "violations": [
+      "Email Address",
+      "Phone Number",
+      "Plaintext password detected.",
+      "Personally Identifiable Information (PII) detected.",
+      "Unsafe file destination for sensitive data (plaintext .txt file)."
+    ],
+    "reason": "The content includes a plaintext password and Personally Identifiable Information (PII), which are to be written to an unsecured plaintext file, posing a critical security risk.",
+    "toolResult": null
+  },
+  {
+    "id": "1a84bfce-da8d-423a-8e76-a9f01a5263a3",
+    "timestamp": "2026-07-06T16:44:25.186Z",
+    "requestId": "REQ-1783356260042",
+    "filePath": "output/report.txt",
+    "decision": "APPROVED",
+    "riskScore": 0,
+    "violations": [],
+    "reason": "Request passed all compliance checks.",
+    "toolResult": {
+      "success": true,
+      "path": "C:\\Users\\essilor\\Desktop\\Sreya - Clg\\guardrail-ai\\output\\report.txt",
+      "message": "File written successfully."
+    }
+  }
+]
