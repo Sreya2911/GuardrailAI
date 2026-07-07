@@ -1,0 +1,29 @@
+{
+  "name": "guardrail-ai",
+  "version": "1.0.0",
+  "description": "Autonomous Regulatory Guardrail Agent built using MCP and Gemini",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "mcp",
+    "ai",
+    "compliance",
+    "gemini",
+    "security",
+    "governance"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "@modelcontextprotocol/sdk": "^1.17.5",
+    "chart.js": "^4.5.1",
+    "dotenv": "^16.6.1",
+    "express": "^5.2.1",
+    "zod": "^3.25.76"
+  }
+}
