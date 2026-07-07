@@ -106,6 +106,8 @@ GuardrailAI processes every request through an AI-driven compliance pipeline:
 - Audit log generation
 - Compliance report export
 
+Note : The MCP server communicates via the Model Context Protocol (STDIO transport) and is intended to be run locally with an MCP-compatible client. The deployed web application hosts the dashboard interface and visualization layer.
+
 ---
 
 # Project Structure
